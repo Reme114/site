@@ -7,5 +7,12 @@
   </head>
   <body>
     <h1>テストページです。</h1>
+    <div>
+      {% if post.outline %}
+      <p>{{ post.outline }}</p>
+      {% else %}
+      <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
+      {% endif %}
+    </div>
   </body>
 </html>
